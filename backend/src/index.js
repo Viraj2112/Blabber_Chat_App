@@ -34,12 +34,12 @@ app.use("/api/auth", authRoutes); // Used for authorization every time a request
 app.use("/api/messages", messageRoutes);
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "/frontend/vite-project/dist")));
+    app.use(express.static(path.join(__dirname, "../frontend/vite-project/dist")));
     app.get("*", (req, res) => {
         if (req.originalUrl.startsWith("/api")) {
             res.status(404).send("API route not found");
         } else {
-            res.sendFile(path.join(__dirname, "/frontend/vite-project/dist", "index.html"));
+            res.sendFile(path.join(__dirname, "../frontend/vite-project/dist", "index.html"));
         }
     });
 }
