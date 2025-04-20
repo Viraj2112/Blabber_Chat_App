@@ -10,7 +10,7 @@ import path from "path";
 
 dotenv.config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5174;
 const __dirname = path.resolve();
 
 // Middleware to log incoming requests
